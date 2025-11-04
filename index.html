@@ -1,45 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Profit Margin Calculator</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main class="container">
-    <h1>Profit Margin Calculator</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Profit Margin Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Profit Margin Calculator</h1>
 
-    <form id="calculator" class="card" autocomplete="off">
-      <label for="labor">Labor cost ($)</label>
-      <input id="labor" name="labor" type="number" min="0" step="0.01" placeholder="e.g. 12.50" required>
+      <form id="calculator" class="card" autocomplete="off">
+        <label for="labor">Labor cost ($)</label>
+        <input
+          id="labor"
+          name="labor"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="e.g. 12.50"
+          required
+        />
 
-      <label for="ingredient">Ingredient cost ($)</label>
-      <input id="ingredient" name="ingredient" type="number" min="0" step="0.01" placeholder="e.g. 3.75" required>
+        <label for="parts">Parts / Materials cost ($)</label>
+        <input
+          id="parts"
+          name="parts"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="e.g. 3.75"
+          required
+        />
 
-      <label for="delivery">Delivery cost ($)</label>
-      <input id="delivery" name="delivery" type="number" min="0" step="0.01" placeholder="e.g. 2.00" required>
+        <label for="delivery">Delivery cost ($)</label>
+        <input
+          id="delivery"
+          name="delivery"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="e.g. 2.00"
+          required
+        />
 
-      <label for="margin">Desired profit margin (%)</label>
-      <input id="margin" name="margin" type="number" min="0" max="1000" step="0.01" placeholder="e.g. 30" required>
+        <label for="margin">Desired profit margin (%)</label>
+        <input
+          id="margin"
+          name="margin"
+          type="number"
+          min="0"
+          max="1000"
+          step="0.01"
+          placeholder="e.g. 30"
+          required
+        />
 
-      <div class="actions">
-        <button type="submit" id="calculate">Calculate Price</button>
-        <button type="button" id="reset">Reset</button>
-      </div>
+        <div class="actions">
+          <button type="submit" id="calculate">Calculate Price</button>
+          <button type="button" id="reset">Reset</button>
+        </div>
 
-      <div id="results" class="results" aria-live="polite">
-        <div class="result-row"><span>Total cost:</span><span id="totalCost">$0.00</span></div>
-        <div class="result-row"><span>Profit amount:</span><span id="profitAmount">$0.00</span></div>
-        <div class="result-row result-final"><span>Charge customer:</span><span id="chargePrice">$0.00</span></div>
-      </div>
-    </form>
+        <div id="results" class="results" aria-live="polite">
+          <div class="result-row">
+            <span>Total cost:</span><span id="totalCost">$0.00</span>
+          </div>
+          <div class="result-row">
+            <span>Profit amount:</span><span id="profitAmount">$0.00</span>
+          </div>
+          <div class="result-row result-final">
+            <span>Charge customer:</span><span id="chargePrice">$0.00</span>
+          </div>
+        </div>
+      </form>
 
-    <footer class="footer">
-      <p>Simple static calculator — enter costs and a margin to get the selling price.</p>
-    </footer>
-  </main>
+      <footer class="footer">
+        <p>
+          Simple static calculator — enter costs and a margin to get the selling
+          price.
+        </p>
+      </footer>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

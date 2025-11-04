@@ -3,7 +3,7 @@ Profit Margin Calculator
 This is a small static site (HTML/CSS/JS) that calculates how much to charge a customer based on:
 
 - Labor cost
-- Ingredient cost
+- Parts / Materialss cost
 - Delivery cost
 - Desired profit margin (%)
 
@@ -17,9 +17,9 @@ Notes and details
 
 - Inputs accept decimal values. All inputs must be non-negative.
 - The calculator computes:
-	- Total cost = labor + ingredient + delivery
-	- Profit amount = Total cost * (margin% / 100)
-	- Charge price = Total cost + Profit amount
+  - Total cost = labor + ingredient + delivery
+  - Profit amount = Total cost \* (margin% / 100)
+  - Charge price = Total cost + Profit amount
 - The UI performs live calculations as you type and also supports a manual "Calculate" button and a "Reset" button.
 
 Files in this folder
@@ -28,4 +28,3 @@ Files in this folder
 - `styles.css` — styles and responsive layout
 - `script.js` — calculation logic and input handling
 - `README.md` — this file
-
