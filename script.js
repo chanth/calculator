@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const productionCostEl = document.getElementById("productionCost");
   const profitAmountEl = document.getElementById("profitAmount");
-  const chargePriceEl = document.getElementById("chargePrice");
+  const sellingPriceEl = document.getElementById("sellingPrice");
 
   function fmt(n) {
     return n.toLocaleString(undefined, {
@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const productionCost = labor + parts + delivery;
     const profitAmount = productionCost * (marginPct / 100);
-    const chargePrice = productionCost + profitAmount;
+    const sellingPrice = productionCost + profitAmount;
 
     productionCostEl.textContent = `$${fmt(productionCost)}`;
     profitAmountEl.textContent = `$${fmt(profitAmount)}`;
-    chargePriceEl.textContent = `$${fmt(chargePrice)}`;
+    sellingPriceEl.textContent = `$${fmt(sellingPrice)}`;
   }
 
   form.addEventListener("submit", calculate);
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
     productionCostEl.textContent = "$0.00";
     profitAmountEl.textContent = "$0.00";
-    chargePriceEl.textContent = "$0.00";
+    sellingPriceEl.textContent = "$0.00";
   });
 
   // Optional: live calculation as user types
