@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const deliveryEl = document.getElementById("delivery");
   const marginEl = document.getElementById("margin");
 
-  const totalCostEl = document.getElementById("totalCost");
+  const productionCostEl = document.getElementById("productionCost");
   const profitAmountEl = document.getElementById("profitAmount");
   const chargePriceEl = document.getElementById("chargePrice");
 
@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const totalCost = labor + parts + delivery;
-    const profitAmount = totalCost * (marginPct / 100);
-    const chargePrice = totalCost + profitAmount;
+    const productionCost = labor + parts + delivery;
+    const profitAmount = productionCost * (marginPct / 100);
+    const chargePrice = productionCost + profitAmount;
 
-    totalCostEl.textContent = `$${fmt(totalCost)}`;
+    productionCostEl.textContent = `$${fmt(productionCost)}`;
     profitAmountEl.textContent = `$${fmt(profitAmount)}`;
     chargePriceEl.textContent = `$${fmt(chargePrice)}`;
   }
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("reset").addEventListener("click", () => {
     form.reset();
-    totalCostEl.textContent = "$0.00";
+    productionCostEl.textContent = "$0.00";
     profitAmountEl.textContent = "$0.00";
     chargePriceEl.textContent = "$0.00";
   });
