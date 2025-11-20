@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const langSelect = document.getElementById("langSelect");
 
+  let isResetting = false;
+
   const translations = {
     en: {
       title: "Profit Margin Calculator",
@@ -112,6 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function calculate(e) {
     if (e) e.preventDefault();
+    
+    // Prevent calculation during reset
+    if (isResetting) return;
 
     const labor = parseFloat(laborEl.value) || 0;
     const parts = parseFloat(partsEl.value) || 0;
@@ -136,10 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", calculate);
 
   document.getElementById("reset").addEventListener("click", () => {
-    form.reset();
+    isResetting = true;
+    
+    // Explicitly clear all input values
+    laborEl.value = "";
+    partsEl.value = "";
+    deliveryEl.value = "";
+    marginEl.value = "";
+    
+    // Clear results display
     productionCostEl.textContent = "$0.00";
     profitAmountEl.textContent = "$0.00";
     sellingPriceEl.textContent = "$0.00";
+    
+    // Re-enable calculation after reset completes
+    setTimeout(() => {
+      isResetting = false;
+    }, 50);
   });
 
   // Optional: live calculation as user types
