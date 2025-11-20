@@ -8,10 +8,19 @@
   </head>
   <body>
     <main class="container">
-      <h1>Profit Margin Calculator</h1>
+      <div class="lang-switch">
+        <select id="langSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="es">Español</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+      <h1 data-i18n="title">Profit Margin Calculator</h1>
 
       <form id="calculator" class="card" autocomplete="off">
-        <label for="labor">Labor cost ($)</label>
+        <label for="labor" data-i18n="laborCostLabel">Labor cost ($)</label>
         <input
           id="labor"
           name="labor"
@@ -20,9 +29,12 @@
           step="0.01"
           placeholder="e.g. 12.50"
           required
+          data-i18n-placeholder="laborCostPh"
         />
 
-        <label for="parts">Parts / Materials cost ($)</label>
+        <label for="parts" data-i18n="partsCostLabel"
+          >Parts / Materials cost ($)</label
+        >
         <input
           id="parts"
           name="parts"
@@ -31,9 +43,12 @@
           step="0.01"
           placeholder="e.g. 3.75"
           required
+          data-i18n-placeholder="partsCostPh"
         />
 
-        <label for="delivery">Delivery cost ($)</label>
+        <label for="delivery" data-i18n="deliveryCostLabel"
+          >Delivery cost ($)</label
+        >
         <input
           id="delivery"
           name="delivery"
@@ -42,9 +57,12 @@
           step="0.01"
           placeholder="e.g. 2.00"
           required
+          data-i18n-placeholder="deliveryCostPh"
         />
 
-        <label for="margin">Desired profit margin (%)</label>
+        <label for="margin" data-i18n="marginLabel"
+          >Desired profit margin (%)</label
+        >
         <input
           id="margin"
           name="margin"
@@ -54,28 +72,34 @@
           step="0.01"
           placeholder="e.g. 30"
           required
+          data-i18n-placeholder="marginPh"
         />
 
         <div class="actions">
-          <button type="submit" id="calculate">Calculate Price</button>
-          <button type="button" id="reset">Reset</button>
+          <button type="submit" id="calculate" data-i18n="calcBtn">
+            Calculate Price
+          </button>
+          <button type="button" id="reset" data-i18n="resetBtn">Reset</button>
         </div>
 
         <div id="results" class="results" aria-live="polite">
           <div class="result-row">
-            <span>Production cost:</span><span id="productionCost">$0.00</span>
+            <span data-i18n="productionCostLabel">Production cost:</span
+            ><span id="productionCost">$0.00</span>
           </div>
           <div class="result-row">
-            <span>Profit amount:</span><span id="profitAmount">$0.00</span>
+            <span data-i18n="profitAmountLabel">Profit amount:</span
+            ><span id="profitAmount">$0.00</span>
           </div>
           <div class="result-row result-final">
-            <span>Selling price:</span><span id="sellingPrice">$0.00</span>
+            <span data-i18n="sellingPriceLabel">Selling price:</span
+            ><span id="sellingPrice">$0.00</span>
           </div>
         </div>
       </form>
 
       <footer class="footer">
-        <p>
+        <p data-i18n="footerText">
           Simple static calculator — enter costs and a margin to get the selling
           price.
         </p>
